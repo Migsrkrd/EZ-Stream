@@ -92,3 +92,25 @@ li a:hover{
     font-size: 150%;
 }
 
+#topTen{
+display: flex;
+justify-content: space-evenly;
+}
+
+.topTenOne{
+    max-width: 20%;
+    margin: 20px;
+    border: 2px solid var(--white);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.topTenOne h4{
+    color: var(--red);
+    text-align: center;
+}
+
+.topTenOne p{
+    color: var(--white);
+    margin-top: 20px;
+}
