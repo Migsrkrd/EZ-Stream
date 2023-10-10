@@ -60,3 +60,35 @@ li a:hover{
     letter-spacing: 8px;
     transition: .25s;
 }
+
+.searchResults{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.searchResults h3{
+    color: var(--red);
+}
+
+.searchContent{
+    display: flex;
+    flex-direction: row;
+}
+
+.searchContent img{
+    max-width: 300px;
+    margin: 20px;
+
+}
+
+.searchText{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px;
+    color: var(--white);
+    font-size: 150%;
+}
+
