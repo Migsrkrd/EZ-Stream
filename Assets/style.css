@@ -113,18 +113,24 @@ font-size: 125%;
     font-weight: bolder;
     color: var(--red);
     text-align: center;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
 }
 
 .topTenOne p{
     color: var(--white);
     margin-top: 20px;
 }
-button{
-    background: var(--white);
-}
 
-.topTenTitle{
+#topTenTitle{
     text-align: center;
     margin-bottom: 100px;
+    padding: 50px;
     color: var(--red);
+    font-weight: bolder;
+    border-top: 3px solid var(--white);
+    border-bottom: 3px solid var(--white);
+}
+#topTenTitle h4{
+    font-size: 50px;
 }
