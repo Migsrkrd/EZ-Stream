@@ -119,3 +119,12 @@ font-size: 125%;
     color: var(--white);
     margin-top: 20px;
 }
+button{
+    background: var(--white);
+}
+
+.topTenTitle{
+    text-align: center;
+    margin-bottom: 100px;
+    color: var(--red);
+}
