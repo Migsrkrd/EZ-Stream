@@ -92,3 +92,45 @@ li a:hover{
     font-size: 150%;
 }
 
+#topTen{
+display: flex;
+justify-content: space-evenly;
+flex-wrap: wrap;
+font-size: 125%;
+}
+
+.topTenOne{
+    max-width: 25%;
+    margin: 20px;
+    border: 2px solid var(--white);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.topTenOne h4{
+    background-color: var(--white);
+    font-size: 200%;
+    font-weight: bolder;
+    color: var(--red);
+    text-align: center;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.topTenOne p{
+    color: var(--white);
+    margin-top: 20px;
+}
+
+#topTenTitle{
+    text-align: center;
+    margin-bottom: 100px;
+    padding: 50px;
+    color: var(--red);
+    font-weight: bolder;
+    border-top: 3px solid var(--white);
+    border-bottom: 3px solid var(--white);
+}
+#topTenTitle h4{
+    font-size: 50px;
+}
