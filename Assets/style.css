@@ -33,3 +33,30 @@ textarea{
     border-radius: 15px;
     font-size: 150%;
 }
+
+.btn{
+    border-radius: 15px;
+    font-size: 150%;
+    padding: 10px;
+    letter-spacing: 2px;
+    transition: all .25s;
+}
+
+.btn:hover{
+    letter-spacing: 15px;
+    transition: .25s;
+}
+
+li a{
+    font-size: 80%;
+    margin: 10px;
+    border: 1px solid var(--grey);
+    color: var(--grey);
+    transition: all 0.25s;
+}
+
+li a:hover{
+    color: var(--red);
+    letter-spacing: 8px;
+    transition: .25s;
+}
