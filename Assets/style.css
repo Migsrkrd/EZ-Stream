@@ -18,3 +18,18 @@ header{
     position: fixed;
     width: 100%;
 }
+
+#webName{
+    border-right: 3px solid var(--grey);
+    font-size: 300%;
+}
+
+.searchArea{
+    margin: 200px 100px 100px 100px;
+    border-radius: 50px;
+}
+
+textarea{
+    border-radius: 15px;
+    font-size: 150%;
+}
