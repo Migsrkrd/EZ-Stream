@@ -95,10 +95,12 @@ li a:hover{
 #topTen{
 display: flex;
 justify-content: space-evenly;
+flex-wrap: wrap;
+font-size: 125%;
 }
 
 .topTenOne{
-    max-width: 20%;
+    max-width: 25%;
     margin: 20px;
     border: 2px solid var(--white);
     border-radius: 15px;
@@ -106,6 +108,9 @@ justify-content: space-evenly;
 }
 
 .topTenOne h4{
+    background-color: var(--white);
+    font-size: 200%;
+    font-weight: bolder;
     color: var(--red);
     text-align: center;
 }
