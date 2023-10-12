@@ -22,10 +22,13 @@ function searchTitle() {
         alert("Please enter a valid title");
         return;
     }
-    let formattedUrl = `https://streaming-availability.p.rapidapi.com/search/title?title=${encodeURIComponent(inputString)}&country=us&show_type=all&output_language=en&rapidapi-key=7ddc588895msh7be76c92a64ab8fp1cbaa4jsn721fda1e57e9`;
+    const apiKey = 'E1cqS9UwZP5Qy44utNA1URGXtynDtvwUjjd4GUY0'; 
+
+    let formattedUrl = `https://api.watchmode.com/v1/search/?apiKey=${apiKey}&search_field=title&search_value=${encodeURIComponent(inputString)}`;
+    
     getApi(formattedUrl).then(data => {
-        localStorage.setItem('imdbData', JSON.stringify(data.results));
-        displayResults(data.results);
+        localStorage.setItem('watchmodeData', JSON.stringify(data));
+        displayResults(data);
     });
 }
 
