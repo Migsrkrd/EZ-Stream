@@ -29,6 +29,21 @@ function searchTitle() {
     });
 }
 
+function displayResults(data) {
+    let resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = "";
+
+    data.forEach(item => {
+        resultDiv.innerHTML += `
+        <div class="movie">
+            <img src="${item.poster}" alt="${item.title}">
+            <p>${item.title} (${item.year})</p>
+            <p>Stars: ${item.stars}</p>
+            <p>Type: ${item.qid}</p>
+        </div>`;
+    });
+}
+
 //add top ten html
 //add top ten css
 //add carousel below header
