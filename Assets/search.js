@@ -1,6 +1,5 @@
-var streamUrl = 'https://streaming-availability.p.rapidapi.com/search/title?title=Harry Potter&country=us&show_type=all&output_language=en&rapidapi-key=7ddc588895msh7be76c92a64ab8fp1cbaa4jsn721fda1e57e9';
-var imdbLink = 'https://imdb188.p.rapidapi.com/api/v1/searchIMDB?query=TheMummy&rapidapi-key=7ddc588895msh7be76c92a64ab8fp1cbaa4jsn721fda1e57e9&=0';
-
+const TMDB_API_KEY = '6a68f26813b3c5095ce117f409c6693c';
+const TMDB_BASE_URL = 'https://api.themoviedb.org/3';
 
 function getApi(url) {
     return fetch(url)
@@ -16,46 +15,41 @@ function getApi(url) {
 }
 
 function searchTitle() {
-    let inputString = document.getElementById('mediaSearch').value.trim();
+    let inputString = document.getElementById('mediaSearch').value;
 
-    if (!inputString) {
+    if (!inputString || inputString.trim() === "") {
         alert("Please enter a valid title");
         return;
     }
-    const apiKey = 'E1cqS9UwZP5Qy44utNA1URGXtynDtvwUjjd4GUY0'; 
 
-    let formattedUrl = `https://api.watchmode.com/v1/search/?apiKey=${apiKey}&search_field=title&search_value=${encodeURIComponent(inputString)}`;
+    let formattedUrl = `${TMDB_BASE_URL}/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(inputString)}`;
     
     getApi(formattedUrl).then(data => {
         if (data && data.results) {
-            displayResults(data);
+            displayResults(data.results);
         } else {
-            console.error("Unexpected data structure:", data);
+            console.log('Unexpected data structure:', data);
         }
     });
 }
 
-function displayResults(data) {
-    let resultDiv = document.getElementById('searchResultsContainer');
+
+function displayResults(movies) {
+    let resultDiv = document.getElementById('searchResults');
     resultDiv.innerHTML = "";
-    
-    data.results.forEach(item => {
+
+    movies.forEach(movie => {
+        let posterPath = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'path_to_default_image.jpg';
         resultDiv.innerHTML += `
         <div class="movie">
-            <img src="${item.image}" alt="${item.title}">
-            <p>${item.title}</p>
-            <p>Rating: ${item.rating ? item.rating : 'N/A'}</p>
-            <p>Type: ${item.type}</p>
+            <img src="${posterPath}" alt="${movie.title}">
+            <p>${movie.title} (${new Date(movie.release_date).getFullYear()})</p>
+            <p>Rating: ${movie.vote_average}</p>
         </div>`;
     });
 }
 
 document.getElementById('mediaSearchID').addEventListener('click', searchTitle);
-
-getApi(formattedUrl).then(data => {
-    console.log("Raw API Response:", data);
-    // further processing...
-});
 //add top ten html
 //add top ten css
 //add carousel below header
