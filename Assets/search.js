@@ -16,7 +16,7 @@ function getApi(url) {
 }
 
 function searchTitle() {
-    let inputString = document.getElementById('searchInput').value;
+    let inputString = document.getElementById('mediaSearch').value;
 
     if (!inputString || inputString.trim() === "") {
         alert("Please enter a valid title");
@@ -43,7 +43,7 @@ function displayResults(data) {
         </div>`;
     });
 }
-
+document.getElementById('mediaSearchID').addEventListener('click', searchTitle);
 //add top ten html
 //add top ten css
 //add carousel below header
