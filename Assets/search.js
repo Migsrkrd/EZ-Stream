@@ -1,6 +1,34 @@
 var streamUrl = 'https://streaming-availability.p.rapidapi.com/search/title?title=Harry Potter&country=us&show_type=all&output_language=en&rapidapi-key=7ddc588895msh7be76c92a64ab8fp1cbaa4jsn721fda1e57e9';
 var imdbLink = 'https://imdb188.p.rapidapi.com/api/v1/searchIMDB?query=TheMummy&rapidapi-key=7ddc588895msh7be76c92a64ab8fp1cbaa4jsn721fda1e57e9&=0';
 
+
+function getApi(url) {
+    return fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network error');
+            }
+            return response.json();
+        })
+        .catch(error => {
+            console.log('There was a problem with the fetching the data:', error.message);
+        });
+}
+
+function searchTitle() {
+    let inputString = document.getElementById('searchInput').value;
+
+    if (!inputString || inputString.trim() === "") {
+        alert("Please enter a valid title");
+        return;
+    }
+    let formattedUrl = `https://streaming-availability.p.rapidapi.com/search/title?title=${encodeURIComponent(inputString)}&country=us&show_type=all&output_language=en&rapidapi-key=7ddc588895msh7be76c92a64ab8fp1cbaa4jsn721fda1e57e9`;
+    getApi(formattedUrl).then(data => {
+        localStorage.setItem('imdbData', JSON.stringify(data.results));
+        displayResults(data.results);
+    });
+}
+
 //add top ten html
 //add top ten css
 //add carousel below header
