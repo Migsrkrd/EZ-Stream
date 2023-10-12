@@ -16,9 +16,9 @@ function getApi(url) {
 }
 
 function searchTitle() {
-    let inputString = document.getElementById('mediaSearch').value;
+    let inputString = document.getElementById('mediaSearch').value.trim();
 
-    if (!inputString || inputString.trim() === "") {
+    if (!inputString) {
         alert("Please enter a valid title");
         return;
     }
@@ -27,29 +27,29 @@ function searchTitle() {
     let formattedUrl = `https://api.watchmode.com/v1/search/?apiKey=${apiKey}&search_field=title&search_value=${encodeURIComponent(inputString)}`;
     
     getApi(formattedUrl).then(data => {
-        localStorage.setItem('watchmodeData', JSON.stringify(data));
-        displayResults(data);
+        if (data && data.results) {
+            displayResults(data);
+        } else {
+            console.error("Unexpected data structure:", data);
+        }
     });
 }
 
 function displayResults(data) {
-    let resultDiv = document.querySelector('.searchResults');
+    let resultDiv = document.getElementById('searchResultsContainer');
     resultDiv.innerHTML = "";
     
-    data.forEach(item => {
+    data.results.forEach(item => {
         resultDiv.innerHTML += `
-        <article>
-            <div class="searchContent">
-                <img src="${item.poster_path}" alt="${item.title}">
-                <div class="searchText">
-                    <p>${item.title} (${item.release_date.split('-')[0]})</p>
-                    <p>Rating: ${item.rating}</p>
-                    <p>Type: ${item.type}</p>
-                </div>
-            </div>
-        </article>`;
+        <div class="movie">
+            <img src="${item.image}" alt="${item.title}">
+            <p>${item.title}</p>
+            <p>Rating: ${item.rating ? item.rating : 'N/A'}</p>
+            <p>Type: ${item.type}</p>
+        </div>`;
     });
 }
+
 document.getElementById('mediaSearchID').addEventListener('click', searchTitle);
 //add top ten html
 //add top ten css
