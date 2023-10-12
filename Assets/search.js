@@ -33,17 +33,21 @@ function searchTitle() {
 }
 
 function displayResults(data) {
-    let resultDiv = document.getElementById('result');
+    let resultDiv = document.querySelector('.searchResults');
     resultDiv.innerHTML = "";
     
     data.forEach(item => {
         resultDiv.innerHTML += `
-        <div class="movie">
-            <img src="${item.poster_path}" alt="${item.title}">
-            <p>${item.title} (${item.release_date.split('-')[0]})</p>
-            <p>Rating: ${item.rating}</p>
-            <p>Type: ${item.type}</p>
-        </div>`;
+        <article>
+            <div class="searchContent">
+                <img src="${item.poster_path}" alt="${item.title}">
+                <div class="searchText">
+                    <p>${item.title} (${item.release_date.split('-')[0]})</p>
+                    <p>Rating: ${item.rating}</p>
+                    <p>Type: ${item.type}</p>
+                </div>
+            </div>
+        </article>`;
     });
 }
 document.getElementById('mediaSearchID').addEventListener('click', searchTitle);
