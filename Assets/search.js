@@ -35,14 +35,14 @@ function searchTitle() {
 function displayResults(data) {
     let resultDiv = document.getElementById('result');
     resultDiv.innerHTML = "";
-
+    
     data.forEach(item => {
         resultDiv.innerHTML += `
         <div class="movie">
-            <img src="${item.poster}" alt="${item.title}">
-            <p>${item.title} (${item.year})</p>
-            <p>Stars: ${item.stars}</p>
-            <p>Type: ${item.qid}</p>
+            <img src="${item.poster_path}" alt="${item.title}">
+            <p>${item.title} (${item.release_date.split('-')[0]})</p>
+            <p>Rating: ${item.rating}</p>
+            <p>Type: ${item.type}</p>
         </div>`;
     });
 }
