@@ -1,6 +1,5 @@
-var streamUrl = 'https://streaming-availability.p.rapidapi.com/search/title?title=Harry Potter&country=us&show_type=all&output_language=en&rapidapi-key=7ddc588895msh7be76c92a64ab8fp1cbaa4jsn721fda1e57e9';
-var imdbLink = 'https://imdb188.p.rapidapi.com/api/v1/searchIMDB?query=TheMummy&rapidapi-key=7ddc588895msh7be76c92a64ab8fp1cbaa4jsn721fda1e57e9&=0';
-
+const TMDB_API_KEY = '6a68f26813b3c5095ce117f409c6693c';
+const TMDB_BASE_URL = 'https://api.themoviedb.org/3';
 
 function getApi(url) {
     return fetch(url)
@@ -16,19 +15,41 @@ function getApi(url) {
 }
 
 function searchTitle() {
-    let inputString = document.getElementById('searchInput').value;
+    let inputString = document.getElementById('mediaSearch').value;
 
     if (!inputString || inputString.trim() === "") {
         alert("Please enter a valid title");
         return;
     }
-    let formattedUrl = `https://streaming-availability.p.rapidapi.com/search/title?title=${encodeURIComponent(inputString)}&country=us&show_type=all&output_language=en&rapidapi-key=7ddc588895msh7be76c92a64ab8fp1cbaa4jsn721fda1e57e9`;
+
+    let formattedUrl = `${TMDB_BASE_URL}/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(inputString)}`;
+    
     getApi(formattedUrl).then(data => {
-        localStorage.setItem('imdbData', JSON.stringify(data.results));
-        displayResults(data.results);
+        if (data && data.results) {
+            displayResults(data.results);
+        } else {
+            console.log('Unexpected data structure:', data);
+        }
     });
 }
 
+
+function displayResults(movies) {
+    let resultDiv = document.getElementById('searchResults');
+    resultDiv.innerHTML = "";
+
+    movies.forEach(movie => {
+        let posterPath = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'path_to_default_image.jpg';
+        resultDiv.innerHTML += `
+        <div class="movie">
+            <img src="${posterPath}" alt="${movie.title}">
+            <p>${movie.title} (${new Date(movie.release_date).getFullYear()})</p>
+            <p>Rating: ${movie.vote_average}</p>
+        </div>`;
+    });
+}
+
+document.getElementById('mediaSearchID').addEventListener('click', searchTitle);
 //add top ten html
 //add top ten css
 //add carousel below header
