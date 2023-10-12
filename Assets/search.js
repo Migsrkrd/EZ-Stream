@@ -51,6 +51,11 @@ function displayResults(data) {
 }
 
 document.getElementById('mediaSearchID').addEventListener('click', searchTitle);
+
+getApi(formattedUrl).then(data => {
+    console.log("Raw API Response:", data);
+    // further processing...
+});
 //add top ten html
 //add top ten css
 //add carousel below header
