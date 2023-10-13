@@ -48,7 +48,6 @@ function displayResults(movies) {
         </div>`;
     });
 }
-
 $(document).foundation();
 document.getElementById('mediaSearchID').addEventListener('click', searchTitle);
 //add top ten html
