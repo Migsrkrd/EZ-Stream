@@ -167,3 +167,36 @@ font-size: 125%;
         font-size: 40px;
     }
 }
+
+@media (min-width: 600px) and (max-width: 1023px) {
+    header {
+        font-size: 130%;
+    }
+    #webName {
+        font-size: 275%;
+    }
+    .searchArea {
+        margin: 175px 75px 75px 75px;
+    }
+    textarea, .btn {
+        font-size: 130%;
+    }
+    li a {
+        font-size: 75%;
+    }
+    .searchText {
+        font-size: 130%;
+    }
+    #topTen {
+        font-size: 115%;
+    }
+    .topTenOne {
+        max-width: 225px;
+    }
+    .topTenOne h4 {
+        font-size: 175%;
+    }
+    #topTenTitle h4 {
+        font-size: 45px;
+    }
+}
