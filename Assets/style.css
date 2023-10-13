@@ -141,7 +141,6 @@ font-size: 125%;
 
 
 
-
 /*.orbit-container { height:800px; }  
 
 .orbit-container .orbit-slides-container > * {
@@ -150,3 +149,85 @@ font-size: 125%;
   float: left;
   height: 100%;
 } */
+
+
+@media only screen and (min-width: 641px) {
+    .searchArea {
+        margin-top: 25px;
+    }
+
+    .searchResults {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .searchContent {
+        display: flex;
+        align-items: center;
+        margin: 20px;
+        border: 3px solid var(--grey);
+        padding: 20px;
+    }
+
+    .searchContent img {
+        max-width: 50%;
+        height: auto;
+        margin: 20px;
+    }
+
+    .topTenOne {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .topTenOne img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .searchArea {
+        margin-top: 10px;
+    }
+
+    .searchResults {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .searchContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px;
+        border: 3px solid var(--grey);
+        padding: 10px;
+    }
+
+    .searchContent img {
+        max-width: 90%;
+        height: auto;
+        margin: 10px;
+    }
+
+    .topTenOne img {
+        max-width: 90%;
+        height: auto;
+    }
+
+    .top-bar-right img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .card-section img {
+        max-width: 100%;
+        height: auto;
+        margin: 10px 0;
+    }
+}
