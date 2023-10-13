@@ -134,3 +134,36 @@ font-size: 125%;
 #topTenTitle h4{
     font-size: 50px;
 }
+
+@media (max-width: 599px) {
+    header {
+        font-size: 120%;
+    }
+    #webName {
+        font-size: 250%;
+    }
+    .searchArea {
+        margin: 150px 50px 50px 50px;
+    }
+    textarea, .btn {
+        font-size: 120%;
+    }
+    li a {
+        font-size: 70%;
+    }
+    .searchText {
+        font-size: 120%;
+    }
+    #topTen {
+        font-size: 100%;
+    }
+    .topTenOne {
+        max-width: 200px;
+    }
+    .topTenOne h4 {
+        font-size: 150%;
+    }
+    #topTenTitle h4 {
+        font-size: 40px;
+    }
+}
