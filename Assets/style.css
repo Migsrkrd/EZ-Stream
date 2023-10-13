@@ -15,7 +15,7 @@ header{
     color: var(--red);
     border: 3px solid var(--red);
     font-size: 150%;
-    position: fixed;
+    /*position: fixed;*/
     width: 100%;
 }
 
