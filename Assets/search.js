@@ -50,15 +50,3 @@ function displayResults(movies) {
 }
 $(document).foundation();
 document.getElementById('mediaSearchID').addEventListener('click', searchTitle);
-//add top ten html
-//add top ten css
-//add carousel below header
-//add functionality to search bar in main
-    //create bland getApi function
-    //make a function to take in a string
-    //use a modal, if input is an invalid string, warn and tell user as well as do not accept
-    //take in valid string and trim
-    //connect get api funciton to format input string
-    //set local storage for: first imdb array (title, image, the year of release, stars, qid(movie or tv show)), and service types,
-    //get from local storage the above info to display onto page in its given slots
-//add imdb javascript api call and display
