@@ -14,9 +14,7 @@ function getApi(url) {
         });
 }
 
-function searchTitle() {
-    let inputString = document.querySelector('textarea[name="medialook"]').value;
-
+function searchTitle(inputString) {
     if (!inputString || inputString.trim() === "") {
         $('#alertModal').foundation('open');
         return;
@@ -33,7 +31,6 @@ function searchTitle() {
     });
 }
 
-
 function displayResults(movies) {
     let resultDiv = document.getElementById('searchResults');
     resultDiv.innerHTML = "";
@@ -48,5 +45,23 @@ function displayResults(movies) {
         </div>`;
     });
 }
+
+function getQueryFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('query');
+}
+
 $(document).foundation();
-document.getElementById('mediaSearchID').addEventListener('click', searchTitle);
+
+if(document.getElementById('mediaSearchID')) {
+    document.getElementById('mediaSearchID').addEventListener('click', function() {
+        let inputString = document.querySelector('textarea[name="medialook"]').value;
+        searchTitle(inputString);
+    });
+}
+if (document.getElementById('searchResults')) {
+    let query = getQueryFromURL();
+    if(query) {
+        searchTitle(query);
+    }
+}
