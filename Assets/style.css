@@ -5,7 +5,8 @@
 }
 
 body{
-    background: rgb(43, 43, 43);
+    /*background: rgb(43, 43, 43); */
+    background: #ffffff;
     font-family: 'Bebas Neue', sans-serif;
 
 }
@@ -100,7 +101,7 @@ font-size: 125%;
 }
 
 .topTenOne{
-    max-width: 250px;
+    max-width: 25%;
     margin: 20px;
     border: 2px solid var(--white);
     border-radius: 15px;
@@ -111,7 +112,8 @@ font-size: 125%;
     background-color: var(--white);
     font-size: 200%;
     font-weight: bolder;
-    color: var(--red);
+    /*color: var(--red); */
+    color: db0000;
     text-align: center;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
@@ -135,7 +137,9 @@ font-size: 125%;
     font-size: 50px;
 }
 
-
+.orbit-caption {
+    text-size-adjust: 20px;
+}
 
 
 
