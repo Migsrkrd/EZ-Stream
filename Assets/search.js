@@ -15,7 +15,7 @@ function getApi(url) {
 }
 
 function searchTitle() {
-    let inputString = document.getElementById('mediaSearch').value;
+    let inputString = document.querySelector('textarea[name="medialook"]').value;
 
     if (!inputString || inputString.trim() === "") {
         $('#alertModal').foundation('open');
