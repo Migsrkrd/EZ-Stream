@@ -18,7 +18,7 @@ function searchTitle() {
     let inputString = document.getElementById('mediaSearch').value;
 
     if (!inputString || inputString.trim() === "") {
-        alert("Please enter a valid title");
+        $('#alertModal').foundation('open');
         return;
     }
 
@@ -49,6 +49,7 @@ function displayResults(movies) {
     });
 }
 
+$(document).foundation();
 document.getElementById('mediaSearchID').addEventListener('click', searchTitle);
 //add top ten html
 //add top ten css
