@@ -38,17 +38,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const providers = data.results.US ? data.results.US.flatrate : [];
             
             const streamingServicesList = document.getElementById('streamingServicesList');
-    
-            // First, clear the existing content if any
             streamingServicesList.innerHTML = '';
-    
+
             if (providers.length === 0) {
-                // If there are no providers available, display a placeholder message
                 const placeholderMessage = document.createElement('li');
                 placeholderMessage.textContent = 'This movie/TV show is not available on any streaming services at the moment.';
                 streamingServicesList.appendChild(placeholderMessage);
             } else {
-                // Otherwise, display the available streaming providers
                 const topProviders = providers.slice(0, 3);        
                 topProviders.forEach(provider => {
                     const listItem = document.createElement('li');
