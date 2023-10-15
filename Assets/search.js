@@ -78,7 +78,7 @@ function displayResults(movies) {
     let row = createNewRow();
 
     movies.forEach((movie, index) => {
-        let posterPath = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'path_to_default_image.jpg';
+        let posterPath = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'Assets/posterimage.png';
         row.innerHTML += `
         <a href="details.html" class="movie">
             <img src="${posterPath}" alt="${movie.title}">
