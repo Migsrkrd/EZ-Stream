@@ -20,32 +20,51 @@ function searchTitle(inputString) {
         return;
     }
 
-    let formattedUrl = `${TMDB_BASE_URL}/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(inputString)}`;
-    
-    getApi(formattedUrl).then(data => {
+    searchMovies(inputString);
+    searchTVShows(inputString);
+}
+
+function searchMovies(inputString) {
+    let movieUrl = `${TMDB_BASE_URL}/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(inputString)}`;
+
+    getApi(movieUrl).then(data => {
         if (data && data.results) {
-            displayResults(data.results);
+            displayResults(data.results, 'movie');
         } else {
             console.log('Unexpected data structure:', data);
         }
     });
 }
 
-function displayResults(movies) {
+function searchTVShows(inputString) {
+    let tvUrl = `${TMDB_BASE_URL}/search/tv?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(inputString)}`;
+
+    getApi(tvUrl).then(data => {
+        if (data && data.results) {
+            displayResults(data.results, 'tv');
+        } else {
+            console.log('Unexpected data structure:', data);
+        }
+    });
+}
+
+function displayResults(results, type) {
     let resultDiv = document.getElementById('searchResults');
-    resultDiv.innerHTML = "";
     let row = createNewRow();
 
-    movies.forEach((movie, index) => {
-        let posterPath = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'Assets/posterimage.png';
+    results.forEach((item, index) => {
+        let imagePath = item.poster_path ? `https://image.tmdb.org/t/p/w500${item.poster_path}` : 'Assets/posterimage.png';
+        let title = type === 'movie' ? item.title : item.name;
+        let releaseDate = type === 'movie' ? item.release_date : item.first_air_date;
+
         row.innerHTML += `
-        <a href="details.html?movieId=${movie.id}" class="movie">
-            <img src="${posterPath}" alt="${movie.title}">
-            <p>${movie.title} (${new Date(movie.release_date).getFullYear()})</p>
-            <p>Rating: ${movie.vote_average}</p>
+        <a href="details.html?${type}Id=${item.id}" class="${type}">
+            <img src="${imagePath}" alt="${title}">
+            <p>${title} (${new Date(releaseDate).getFullYear()})</p>
+            <p>Rating: ${item.vote_average}</p>
         </a>`;
     
-        if ((index + 1) % 5 === 0 || index === movies.length - 1) {
+        if ((index + 1) % 5 === 0 || index === results.length - 1) {
             resultDiv.appendChild(row);
             row = createNewRow();
         }

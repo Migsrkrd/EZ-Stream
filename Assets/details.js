@@ -1,26 +1,33 @@
 document.addEventListener('DOMContentLoaded', function() {
-    function getMovieIdFromUrl() {
+    function getIdAndTypeFromUrl() {
         const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get('movieId');
+        if (urlParams.get('movieId')) {
+            return { id: urlParams.get('movieId'), type: 'movie' };
+        }
+        if (urlParams.get('tvId')) {
+            return { id: urlParams.get('tvId'), type: 'tv' };
+        }
+        return null;
     }
 
-    async function fetchMovieDetails(movieId) {
+    async function fetchDetails(id, type) {
         try {
-            const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=6a68f26813b3c5095ce117f409c6693c&language=en-US`);
+            const response = await fetch(`https://api.themoviedb.org/3/${type}/${id}?api_key=6a68f26813b3c5095ce117f409c6693c&language=en-US`);
             const data = await response.json();
             document.getElementById('moviePoster').src = `https://image.tmdb.org/t/p/w500${data.poster_path}`;
-            document.getElementById('movieTitle').textContent = data.title;
-            document.getElementById('movieReleaseDate').textContent = data.release_date;
-            document.getElementById('movieRating').textContent = data.vote_average;
+            document.getElementById('movieTitle').textContent = data.title || data.name; // TV shows use 'name'
+            document.getElementById('movieReleaseDate').textContent = data.release_date || data.first_air_date; // TV shows use 'first_air_date'
+            const movieRatingElement = document.getElementById('movieRating');
+            movieRatingElement.textContent = `IMDB Rating: ${data.vote_average}`;    
             document.getElementById('movieOverview').textContent = data.overview;
         } catch (error) {
-            console.error("Error fetching movie details:", error);
+            console.error("Error fetching details:", error);
         }
     }
 
-    async function fetchMovieProviders(movieId) {
+    async function fetchProviders(id, type) {
         try {
-            const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/watch/providers?api_key=6a68f26813b3c5095ce117f409c6693c`);
+            const response = await fetch(`https://api.themoviedb.org/3/${type}/${id}/watch/providers?api_key=6a68f26813b3c5095ce117f409c6693c`);
             const data = await response.json();
             const providers = data.results.US ? data.results.US.flatrate : [];
             const topProviders = providers.slice(0, 3);        
@@ -32,20 +39,15 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             document.querySelector('.movie-details').appendChild(providerList);
         } catch (error) {
-            console.error("Error fetching movie providers:", error);
+            console.error("Error fetching providers:", error);
         }
     }
-    const movieId = getMovieIdFromUrl();
-    if (movieId) {
-        fetchMovieDetails(movieId);
-        fetchMovieProviders(movieId);
+
+    const detailsInfo = getIdAndTypeFromUrl();
+    if (detailsInfo) {
+        fetchDetails(detailsInfo.id, detailsInfo.type);
+        fetchProviders(detailsInfo.id, detailsInfo.type);
     } else {
-        console.error("Movie ID not found in the URL");
+        console.error("ID or type not found in the URL");
     }
-
 });
-
-function getMovieIdFromURL() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('movieId');
-}

@@ -283,14 +283,14 @@ nav li a:hover {
     }
 }
 
-.movie-row {
+.movie-row, .tv-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-bottom: 20px;
 }
 
-.movie {
+.movie, .tv {
     display: block;
     text-align: center;
     padding: 10px;
@@ -303,18 +303,18 @@ nav li a:hover {
     background-color: rgba(0, 0, 0, 0.7);
     width: calc(20% - 24px);
     display: inline-block;
-    transition: transform 0.3s ease
+    transition: transform 0.3s ease;
 }
 
-.movie:hover {
+.movie:hover, .tv:hover {
     transform: scale(1.05); 
 }
 
-.movie img {
+.movie img, .tv img {
     max-width: 100%; 
     height: auto;
 }
 
-.movie p {
+.movie p, .tv p {
     color: white;
 }
