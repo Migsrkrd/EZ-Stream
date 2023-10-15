@@ -3,43 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css"
-    crossorigin="anonymous">
-    <!-- Insert this within your head tag and after foundation.css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Raleway:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
     <title>Ez stream search</title>
-    
     <link rel="stylesheet" href="Assets/style.css">
 </head>
-<div class="reveal" id="alertModal" data-reveal>
-    <h5>Alert</h5>
-    <p>Please enter a valid title.</p>
-    <button class="close-button" data-close aria-label="Close modal" type="button">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
 <body>
+    <section class="reveal" id="alertModal" data-reveal>
+        <h5>Alert</h5>
+        <p>Please enter a valid title.</p>
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </section>
+
     <header>
         <div class="top-bar"> 
             <div class="top-bar-left">
-              <ul class="dropdown menu" data-dropdown-menu>
-                <li id="webName" class="menu-text">EZ Stream</li>
-                <li><a href="#mediaSearchID">Media Search</a>
-                <li><a href="#topTenTitle">Top Ten</a></li>
-                <li><a href="#">Contact Us</a></li>
-              </ul>
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <li id="webName" class="menu-text">EZ Stream</li>
+                    <li><a href="#mediaSearchID">Media Search</a></li>
+                    <li><a href="#topTenTitle">Top Ten</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
             </div>
-            <div class="top-bar-right">
-              <img src="Assets/banner-design-continuous-line-drawing-business-icons-movie-camera-clap-board-film-tape-banner-design-continuous-line-drawing-131806862.jpg" alt="Film Camera Icon">
-            </div>
-          </div>
+        </div>
     </header>
-    <div class="your-class">
+
+    <section class="your-class">
         <ul class="carousel-container">
             <li class="carousel-list-item">
                 <figure class="image-figure">
@@ -62,8 +58,8 @@
         </ul>
     </div>
     <main class="grid-x grid-padding-x align-center" id="mediaSearch">
-        <div class="card medium-3 searchArea" style="width: 500px;background: rgb(43, 43, 43); color: white;border: 5px solid white;text-align: center;">
-            <div class="card-divider" style="background: rgb(43, 43, 43);color: white">
+        <div class="card medium-3 searchArea">
+            <div class="card-divider">
               <h4>Search where to stream your favorite content!</h4>
             </div>
             <img src="./Assets/Camera.gif">
@@ -71,104 +67,14 @@
                 <textarea name="medialook" cols="30" rows="1" placeholder="Enter Movie/TV Show"></textarea>
                 <a class="button alert btn" id="mediaSearchID">Search</a>
             </div>
-          </div>
+        </div>
     </main>
-    <section id="searchResults" class="searchResults">
-        <div>
-            <h3></h3>
-        </div>
-        <article>
-            <div class="searchContent">
-                <img src=>
-                <div class="searchText">
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                    <p></p>
-                </div>
-            </div>
-        </article>
-    </section>
-    <div id="topTenTitle">
-        <h4>IMDB's Weakly Top Ten</h4>
-    </div>
-    <section id="topTen">
-        <div class="topTenOne">
-            <h4 id="oneHeader"></h4>
-            <img id="imgOne">
-            <p id="plotOne"></p>
-            <p id="mediaType"></p>
-            <p id="releaseYearOne"></p> 
-        <div class="topTenOne">
-            <h4 id="twoHeader"></h4>
-            <img id="imgTwo">
-            <p id="plotTwo"></p>
-            <p id="mediaTypeTwo"></p>
-            <p id="releaseYearTwo"></p>
-        </div>
-        <div class="topTenOne">
-            <h4 id="threeHeader"></h4>
-            <img id="imgThree">
-            <p id="plotThree"></p>
-            <p id="mediaTypeThree"></p>
-            <p id="releaseYearThree"></p>
-        </div>
-        <div class="topTenOne">
-            <h4 id="fourHeader"></h4>
-            <img id="imgFour">
-            <p id="plotFour"></p>
-            <p id="mediaTypeFour"></p>
-            <p id="releaseYearFour"></p>
-        </div>
-        <div class="topTenOne">
-            <h4 id="fiveHeader"></h4>
-            <img id="imgFive">
-            <p id="plotFive"></p>
-            <p id="mediaTypeFive"></p>
-            <p id="releaseYearFive"></p>
-        </div>
-        <div class="topTenOne">
-            <h4 id="sixHeader"></h4>
-            <img id="imgSix">
-            <p id="plotSix"></p>
-            <p id="mediaTypeSix"></p>
-            <p id="releaseYearSix"></p>
-        </div>
-        <div class="topTenOne">
-            <h4 id="sevenHeader"></h4>
-            <img id="imgSeven">
-            <p id="plotSeven"></p>
-            <p id="mediaTypeSeven"></p>
-            <p id="releaseYearSeven"></p>
-        </div>
-        <div class="topTenOne">
-            <h4 id="eightHeader"></h4>
-            <img id="imgEight">
-            <p id="plotEight"></p>
-            <p id="mediaTypeEight"></p>
-            <p id="releaseYearEight"></p>
-        </div>
-        <div class="topTenOne">
-            <h4 id="nineHeader"></h4>
-            <img id="imgNine">
-            <p id="plotNine"></p>
-            <p id="mediaTypeNine"></p>
-            <p id="releaseYearNine"></p>
-        </div>
-        <div class="topTenOne">
-            <h4 id="tenHeader"></h4>
-            <img id="imgTen">
-            <p id="plotTen"></p>
-            <p id="mediaTypeTen"></p>
-            <p id="releaseYearTen"></p>
-        </div>
-    </section>
+    
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/js/foundation.min.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="Assets/search.js"></script>
     <script src="Assets/carousel.js"></script>
     <script src="Assets/topten.js"></script>
 </body>
-</html> 
+</html>
