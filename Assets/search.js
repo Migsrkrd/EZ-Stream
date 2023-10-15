@@ -80,11 +80,11 @@ function displayResults(movies) {
     movies.forEach((movie, index) => {
         let posterPath = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'path_to_default_image.jpg';
         row.innerHTML += `
-        <div class="movie">
+        <a href="details.html" class="movie">
             <img src="${posterPath}" alt="${movie.title}">
             <p>${movie.title} (${new Date(movie.release_date).getFullYear()})</p>
             <p>Rating: ${movie.vote_average}</p>
-        </div>`;
+        </a>`;
     
         if ((index + 1) % 5 === 0 || index === movies.length - 1) {
             resultDiv.appendChild(row);

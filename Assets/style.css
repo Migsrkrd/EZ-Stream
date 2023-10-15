@@ -291,16 +291,24 @@ nav li a:hover {
 }
 
 .movie {
-    border: 2px solid white;
-    border-radius: 10px;
+    display: block;
+    text-align: center;
     padding: 10px;
-    margin: 10px;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    margin: 0 5px 10px; 
+    box-sizing: border-box; 
     background-color: rgba(0, 0, 0, 0.7);
-    width: calc(20% - 24px); /* accounting for margin and border */
-    box-sizing: border-box; /* ensures padding and border are included in width */
+    width: calc(20% - 24px);
     display: inline-block;
+    transition: transform 0.3s ease
 }
 
+.movie:hover {
+    transform: scale(1.05); 
+}
 
 .movie img {
     max-width: 100%; 
