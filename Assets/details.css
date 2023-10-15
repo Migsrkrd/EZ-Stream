@@ -1,0 +1,34 @@
+.movie-detail-container {
+    padding: 30px;
+}
+
+.movie-details .grid-x {
+    display: flex; 
+    flex-wrap: nowrap; 
+    justify-content: space-between; 
+}
+
+.movie-poster, .movie-info {
+    border: 1px solid (43, 43, 43);
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: auto;
+    flex: 1 0 auto;
+}
+
+#moviePoster {
+    max-width: 100%; 
+    display: block;
+    margin: 0 auto;
+}
+
+.top-streaming-services ul {
+    list-style-type: none; 
+    padding-left: 0; 
+    Font: 30px
+}
+
+.movie-detail-container, 
+.movie-detail-container * { 
+    color: white; 
+}

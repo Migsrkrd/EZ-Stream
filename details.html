@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
     <title>Movie Details - EZ Stream</title>
     <link rel="stylesheet" href="Assets/style.css">
+    <link rel="stylesheet" href="Assets/details.css">
 </head>
 
 <body>
@@ -28,29 +29,26 @@
             </div>
         </div>
     </header>
-
-    <section class="movie-details">
-        <div class="grid-x grid-padding-x align-center">
-            <div class="movie-poster medium-4">
-                <img src="" id="moviePoster" alt="Movie Poster">
-                <ul id="streamingServicesList"></ul> 
-            </div>
-            <div class="movie-info medium-8">
-                <h1 id="movieTitle"></h1>
-                <p id="movieReleaseDate"></p>
-                <p id="movieRating"></p>
-                <p id="movieOverview"></p>
-                <div class="top-streaming-services">
-                    <h3>Top Streaming Services:</h3>
-                    <ul>
-                        <li id="streamingService1"></li>
-                        <li id="streamingService2"></li>
-                        <li id="streamingService3"></li>
-                    </ul>
+    <div class="movie-detail-container">
+        <section class="movie-details">
+            <div class="grid-x grid-padding-x align-center">
+                <div class="movie-info medium-8">
+                    <h1 id="movieTitle"></h1>
+                    <p id="movieReleaseDate"></p>
+                    <p id="movieRating"></p>
+                    <p id="movieOverview"></p>
+                    <div class="top-streaming-services">
+                        <h3>Top Streaming Services:</h3>
+                        <ul id="streamingServicesList">
+                        </ul>
+                    </div>
+                </div>
+                <div class="movie-poster medium-4">
+                    <img src="" id="moviePoster" alt="Movie Poster">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/js/foundation.min.js" crossorigin="anonymous"></script>
