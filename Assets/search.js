@@ -14,51 +14,124 @@ function getApi(url) {
         });
 }
 
-function searchTitle() {
-    let inputString = document.querySelector('textarea[name="medialook"]').value;
-
+function searchTitle(inputString) {
     if (!inputString || inputString.trim() === "") {
         $('#alertModal').foundation('open');
         return;
     }
 
-    let formattedUrl = `${TMDB_BASE_URL}/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(inputString)}`;
-    
-    getApi(formattedUrl).then(data => {
+    searchMovies(inputString);
+    searchTVShows(inputString);
+}
+
+function searchMovies(inputString) {
+    let movieUrl = `${TMDB_BASE_URL}/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(inputString)}`;
+
+    getApi(movieUrl).then(data => {
         if (data && data.results) {
-            displayResults(data.results);
+            displayResults(data.results, 'movie');
         } else {
             console.log('Unexpected data structure:', data);
         }
     });
 }
 
+function searchTVShows(inputString) {
+    let tvUrl = `${TMDB_BASE_URL}/search/tv?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(inputString)}`;
 
-function displayResults(movies) {
-    let resultDiv = document.getElementById('searchResults');
-    resultDiv.innerHTML = "";
-
-    movies.forEach(movie => {
-        let posterPath = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'path_to_default_image.jpg';
-        resultDiv.innerHTML += `
-        <div class="movie">
-            <img src="${posterPath}" alt="${movie.title}">
-            <p>${movie.title} (${new Date(movie.release_date).getFullYear()})</p>
-            <p>Rating: ${movie.vote_average}</p>
-        </div>`;
+    getApi(tvUrl).then(data => {
+        if (data && data.results) {
+            displayResults(data.results, 'tv');
+        } else {
+            console.log('Unexpected data structure:', data);
+        }
     });
 }
+
+function displayResults(results, type) {
+    let resultDiv = document.getElementById('searchResults');
+    let row = createNewRow();
+
+    results.forEach((item, index) => {
+        let imagePath = item.poster_path ? `https://image.tmdb.org/t/p/w500${item.poster_path}` : 'Assets/posterimage.png';
+        let title = type === 'movie' ? item.title : item.name;
+        let releaseDate = type === 'movie' ? item.release_date : item.first_air_date;
+
+        row.innerHTML += `
+        <a href="details.html?${type}Id=${item.id}" class="${type}">
+            <img src="${imagePath}" alt="${title}">
+            <p>${title} (${new Date(releaseDate).getFullYear()})</p>
+            <p>Rating: ${item.vote_average}</p>
+        </a>`;
+    
+        if ((index + 1) % 5 === 0 || index === results.length - 1) {
+            resultDiv.appendChild(row);
+            row = createNewRow();
+        }
+    });
+}
+
+function getQueryFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('query');
+}
+
 $(document).foundation();
-document.getElementById('mediaSearchID').addEventListener('click', searchTitle);
-//add top ten html
-//add top ten css
-//add carousel below header
-//add functionality to search bar in main
-    //create bland getApi function
-    //make a function to take in a string
-    //use a modal, if input is an invalid string, warn and tell user as well as do not accept
-    //take in valid string and trim
-    //connect get api funciton to format input string
-    //set local storage for: first imdb array (title, image, the year of release, stars, qid(movie or tv show)), and service types,
-    //get from local storage the above info to display onto page in its given slots
-//add imdb javascript api call and display
+
+if(document.getElementById('mediaSearchID')) {
+    document.getElementById('mediaSearchID').addEventListener('click', function() {
+        let inputString = document.querySelector('textarea[name="medialook"]').value;
+        
+        if (!inputString || inputString.trim() === "") {
+            $('#alertModal').foundation('open');
+            return;
+        }
+        addToSearchHistory(inputString.trim());
+        window.location.href = `results.html?query=${encodeURIComponent(inputString)}`;
+    });
+}
+
+if (document.getElementById('searchResults')) {
+    let query = getQueryFromURL();
+    if(query) {
+        document.getElementById('searchQuery').innerText = query;
+        searchTitle(query);
+    }
+}
+
+function createNewRow() {
+    const div = document.createElement('div');
+    div.classList.add('movie-row');
+    return div;
+}
+
+function addToSearchHistory(searchTerm) {
+    let searchHistory = JSON.parse(localStorage.getItem('ezStreamSearchHistory') || '[]');
+    
+    if (searchHistory.indexOf(searchTerm) === -1) {
+        searchHistory.push(searchTerm);
+
+        // Optional: Limiting the number of search terms stored, for example to the last 5 terms:
+        while (searchHistory.length > 5) {
+            searchHistory.shift();
+        }
+        localStorage.setItem('ezStreamSearchHistory', JSON.stringify(searchHistory));
+    }
+
+    displaySearchHistory();
+}
+
+function displaySearchHistory() {
+    let searchHistory = JSON.parse(localStorage.getItem('ezStreamSearchHistory') || '[]');
+    let historyList = document.getElementById('searchHistoryList');
+    historyList.innerHTML = ''; // Clear existing list
+
+    for (let term of searchHistory.reverse()) {
+        let li = document.createElement('li');
+        li.textContent = term;
+        historyList.appendChild(li);
+    }
+}
+
+// Call displaySearchHistory() when the page loads to show existing history
+document.addEventListener('DOMContentLoaded', displaySearchHistory);
