@@ -86,6 +86,7 @@ if(document.getElementById('mediaSearchID')) {
             $('#alertModal').foundation('open');
             return;
         }
+        addToSearchHistory(inputString.trim());
         window.location.href = `results.html?query=${encodeURIComponent(inputString)}`;
     });
 }
@@ -103,3 +104,34 @@ function createNewRow() {
     div.classList.add('movie-row');
     return div;
 }
+
+function addToSearchHistory(searchTerm) {
+    let searchHistory = JSON.parse(localStorage.getItem('ezStreamSearchHistory') || '[]');
+    
+    if (searchHistory.indexOf(searchTerm) === -1) {
+        searchHistory.push(searchTerm);
+
+        // Optional: Limiting the number of search terms stored, for example to the last 5 terms:
+        while (searchHistory.length > 5) {
+            searchHistory.shift();
+        }
+        localStorage.setItem('ezStreamSearchHistory', JSON.stringify(searchHistory));
+    }
+
+    displaySearchHistory();
+}
+
+function displaySearchHistory() {
+    let searchHistory = JSON.parse(localStorage.getItem('ezStreamSearchHistory') || '[]');
+    let historyList = document.getElementById('searchHistoryList');
+    historyList.innerHTML = ''; // Clear existing list
+
+    for (let term of searchHistory.reverse()) {
+        let li = document.createElement('li');
+        li.textContent = term;
+        historyList.appendChild(li);
+    }
+}
+
+// Call displaySearchHistory() when the page loads to show existing history
+document.addEventListener('DOMContentLoaded', displaySearchHistory);

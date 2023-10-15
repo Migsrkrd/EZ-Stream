@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
             movieRatingElement.textContent = `IMDB Rating: ${data.vote_average}`;    
             document.getElementById('movieOverview').textContent = data.overview;
             document.getElementById('moviePoster').addEventListener('click', function() {
-                saveToHistory(data);
+                saveToHistory(data, detailsInfo.type); 
             });
         } catch (error) {
             console.error("Error fetching details:", error);
@@ -55,7 +55,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-function saveToHistory(movieOrShow) {
+function saveToHistory(movieOrShow, type) { 
+    console.log('Saving to history:', movieOrShow);
     let history = JSON.parse(localStorage.getItem('userHistory') || '[]');
     if (!history.some(item => item.id === movieOrShow.id)) {
         const id = movieOrShow.id;
@@ -64,7 +65,7 @@ function saveToHistory(movieOrShow) {
         const release_date = movieOrShow.release_date || movieOrShow.first_air_date;
         const vote_average = movieOrShow.vote_average;
         const overview = movieOrShow.overview;
-        const savedItem = { id, title, poster_path, release_date, vote_average, overview };       
+        const savedItem = { id, title, poster_path, release_date, vote_average, overview, type }; 
         history.push(savedItem);
         localStorage.setItem('userHistory', JSON.stringify(history));
     }

@@ -60,6 +60,10 @@ header {
     background: var(--grey);
     color: var(--white);
 }
+.card-section {
+    background: var(--grey);
+    color: var(--white);
+}
 
 textarea {
     border-radius: 15px;
@@ -283,14 +287,14 @@ nav li a:hover {
     }
 }
 
-.movie-row, .tv-row {
+.movie-row, .tv-row{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-bottom: 20px;
 }
 
-.movie, .tv {
+.movie, .tv{
     display: block;
     text-align: center;
     padding: 10px;
@@ -306,15 +310,39 @@ nav li a:hover {
     transition: transform 0.3s ease;
 }
 
-.movie:hover, .tv:hover {
+.movie:hover, .tv:hover{
     transform: scale(1.05); 
 }
 
-.movie img, .tv img {
+.movie img, .tv img{
     max-width: 100%; 
     height: auto;
 }
 
-.movie p, .tv p {
+.movie p, .tv p{
     color: white;
+}
+
+
+#searchHistory {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: var(--grey);
+    border: 2px solid var(--white);
+    border-radius: 15px;
+    color: var(--white);
+}
+
+#historyList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#historyList li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--white);
+}
+
+#historyList li:last-child {
+    border-bottom: none;
 }
