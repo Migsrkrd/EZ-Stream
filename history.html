@@ -11,9 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Raleway:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
-    <title>Movie Details - EZ Stream</title>
+    <title>EZ Stream</title>
     <link rel="stylesheet" href="Assets/style.css">
-    <link rel="stylesheet" href="Assets/details.css">
 </head>
 
 <body>
@@ -30,31 +29,19 @@
             </div>
         </div>
     </header>
-    <div class="movie-detail-container">
-        <section class="movie-details">
-            <div class="grid-x grid-padding-x align-center">
-                <div class="movie-info medium-8">
-                    <h1 id="movieTitle"></h1>
-                    <p id="movieReleaseDate"></p>
-                    <p id="movieRating"></p>
-                    <p id="movieOverview"></p>
-                    <div class="top-streaming-services">
-                        <h3>Top Streaming Services:</h3>
-                        <ul id="streamingServicesList">
-                        </ul>
-                    </div>
-                </div>
-                <div class="movie-poster medium-4">
-                    <img src="" id="moviePoster" alt="Movie Poster">
-                </div>
-            </div>
-        </section>
-    </div>
 
+    <div class="movie-detail-container">
+        <section class="movie-details" id="historyContainer"></section>
+        <div id="noHistoryMessage" style="display: none;">
+            <p>No viewing history available. Start browsing movies and shows!</p>
+        </div>
+    </div>
+    
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/js/foundation.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="Assets/details.js"></script>
+    <script src="Assets/history.js"></script>
+    <script src="Assets/search.js"></script>
 </body>
-
 </html>
