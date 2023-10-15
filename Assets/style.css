@@ -346,3 +346,20 @@ nav li a:hover {
 #historyList li:last-child {
     border-bottom: none;
 }
+
+footer{
+    background:var(--red);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+    color: var(--white);
+    font-size: 30px;
+    border: 3px solid var(--white);
+    margin-top: 50px;
+}
+
+footer p{
+    background: var(--grey);
+    padding: 10px 20px 10px 20px;
+    border-radius: 15px;
+}
