@@ -110,8 +110,6 @@ function addToSearchHistory(searchTerm) {
     
     if (searchHistory.indexOf(searchTerm) === -1) {
         searchHistory.push(searchTerm);
-
-        // Optional: Limiting the number of search terms stored, for example to the last 5 terms:
         while (searchHistory.length > 5) {
             searchHistory.shift();
         }
@@ -124,7 +122,7 @@ function addToSearchHistory(searchTerm) {
 function displaySearchHistory() {
     let searchHistory = JSON.parse(localStorage.getItem('ezStreamSearchHistory') || '[]');
     let historyList = document.getElementById('searchHistoryList');
-    historyList.innerHTML = ''; // Clear existing list
+    historyList.innerHTML = ''; 
 
     for (let term of searchHistory.reverse()) {
         let li = document.createElement('li');
@@ -132,6 +130,4 @@ function displaySearchHistory() {
         historyList.appendChild(li);
     }
 }
-
-// Call displaySearchHistory() when the page loads to show existing history
 document.addEventListener('DOMContentLoaded', displaySearchHistory);
