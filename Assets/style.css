@@ -4,16 +4,19 @@
     --white: white;
 }
 
+a, a.button {
+    color: var(--grey); 
+    background: var(--black); 
+}
 
 .dropdown.menu li a {
     padding: 10px 20px;
-    border: 1px solid black; /* Black border around the link */
-    color: black; /* Text color */
+    border: 1px solid black; 
     text-decoration: none;
     transition: all 0.25s;
     display: inline-block;
-    margin: 0 5px; /* Space between each link */
-    border-radius: 4px; /* Slight rounded corners for aesthetics, can be removed if you want */
+    margin: 0 5px;
+    border-radius: 4px; 
 }
 
 .dropdown.menu li a:hover {
@@ -76,28 +79,32 @@ textarea {
 }
 
 nav li a {
-    background-color: var(--grey); /* Set the background color to black (or your --grey variable) */
-    padding: 10px 20px; /* Add padding to give them a button-like appearance */
-    border: 1px solid var(--grey); /* Add a border */
-    color: var(--white); /* Set the text color to white */
-    text-decoration: none; /* Remove underlines from the links */
+    background-color: var(--grey); 
+    padding: 10px 20px; 
+    border: 1px solid var(--grey); 
+    color: var(--white); 
+    text-decoration: none; 
     transition: all 0.25s;
 }
 
 nav li a:hover {
-    background-color: var(--red); /* Change background to red on hover for a dynamic effect */
-    color: var(--white); /* Keep the text color white on hover */
+    background-color: var(--red); 
+    color: var(--white); 
     letter-spacing: 8px;
 }
 
 .searchResults {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* Aligns text to the top-left */
+    color: white;            /* Makes text white */
+    font-size: 30%;      
+    padding-top: 30px;       /* Adds 20px padding to the top */
 }
 
-.searchResults h3 {
-    color: var(--red);
+.searchResults h1 {
+    color: white;
+    font-size: 350%;
 }
 
 .searchContent {
@@ -164,7 +171,7 @@ nav li a:hover {
 }
 
 .orbit-container {
-    height: 35vh; /* Adjusted for carousel */
+    height: 35vh; 
 }
 
 .orbit-container img {
@@ -190,7 +197,7 @@ nav li a:hover {
 @media only screen and (max-width: 600px) {
     header {
         height: 10vh;
-        font-size: 80%;  /* Adjusted font size to ensure content fits nicely */
+        font-size: 80%;  
     }
 
     .top-bar-right img {
@@ -222,7 +229,7 @@ nav li a:hover {
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
     header {
         height: 10vh;
-        font-size: 100%;  /* Adjusted font size to ensure content fits nicely */
+        font-size: 100%;  
     }
 
 
@@ -251,7 +258,7 @@ nav li a:hover {
 @media only screen and (min-width: 1025px) {
     header {
         height: 10vh;
-        font-size: 110%;  /* Adjusted font size to ensure content fits nicely */
+        font-size: 110%; 
     }
 
     #webName {

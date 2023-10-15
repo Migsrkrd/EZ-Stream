@@ -4,47 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EZ Stream - Search Results</title>
-    <link rel="stylesheet" href="/Assets/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Raleway:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css">
+    <title>Search Results - EZ Stream</title>
+    <link rel="stylesheet" href="Assets/style.css">
 </head>
-
-<body>
-
     <header>
         <div class="top-bar">
             <div class="top-bar-left">
                 <ul class="dropdown menu" data-dropdown-menu>
-                    <li class="menu-text">
-                        <img src="" alt=""> EZ Stream
-                    </li>
+                    <li id="webName" class="menu-text">EZ Stream</li>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li class="active"><a href="results.html">Results</a></li>
-                </ul>
-            </div>
-            <div class="top-bar-right">
-                <ul class="menu">
-                    <li><input type="search" placeholder="Search"></li>
-                    <li><button type="button" class="button">Search</button></li>
+                    <li><a href="#mediaSearchID">Media Search</a></li>
+                    <li><a href="#topTenTitle">Top Ten</a></li>
+                    <li><a href="#">Contact Us</a></li>
                 </ul>
             </div>
         </div>
-        <img src="Assets/banner-design-continuous-line-drawing-business-icons-movie-camera-clap-board-film-tape-banner-design-continuous-line-drawing-131806862.jpg" alt="Film Camera Icon">
     </header>
-
     <div class="searchResults">
-        <h3>Search Results</h3>
-        <div class="searchContent" id="searchResults">
-        </div>
+        <h1>Search results for "Your Query Here"</h1>
     </div>
 
-    <footer>
-    </footer>
-
-    <script src="path_to_foundation_js.js"></script>
-    <script src="script.js"></script>
-
-</body>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="Assets/search.js"></script>
+    <script src="Assets/carousel.js"></script>
+    <script src="Assets/topten.js"></script>
 </html>
