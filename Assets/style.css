@@ -282,3 +282,31 @@ nav li a:hover {
         height: 35vh;
     }
 }
+
+.movie-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.movie {
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: calc(20% - 24px); /* accounting for margin and border */
+    box-sizing: border-box; /* ensures padding and border are included in width */
+    display: inline-block;
+}
+
+
+.movie img {
+    max-width: 100%; 
+    height: auto;
+}
+
+.movie p {
+    color: white;
+}
