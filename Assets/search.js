@@ -56,12 +56,18 @@ $(document).foundation();
 if(document.getElementById('mediaSearchID')) {
     document.getElementById('mediaSearchID').addEventListener('click', function() {
         let inputString = document.querySelector('textarea[name="medialook"]').value;
-        searchTitle(inputString);
+        
+        if (!inputString || inputString.trim() === "") {
+            $('#alertModal').foundation('open');
+            return;
+        }
+        window.location.href = `results.html?query=${encodeURIComponent(inputString)}`;
     });
 }
 if (document.getElementById('searchResults')) {
     let query = getQueryFromURL();
     if(query) {
+        document.getElementById('searchQuery').innerText = query;
         searchTitle(query);
     }
 }
