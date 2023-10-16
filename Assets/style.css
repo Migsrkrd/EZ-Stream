@@ -372,7 +372,7 @@ footer p{
 .slick-list{
     border: solid 5px;
     border-color: var(--red);
-    margin: 100px;
+    margin: 0px 100px 100px 80px;
 }
 
 #phoneNumber,
