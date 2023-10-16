@@ -11,5 +11,14 @@ The goal for this collaboration was to design an application that was not only f
 
 Collaboration, teamwork, and communication were all important tools we had to utilize to bring this application to fruition. We were able to achieve our goal of developing this applicaiton by always keeping open channels of communication and a detailed gameplan of what each team members duties and tasks were. If there was a problem that one of our teammates was having trouble will the other teammates wer ready to jump in to assist with solving the problem.
 
-##Application
+## Application
 
+![Application homepage](https://github.com/Migsrkrd/EZ-Stream/assets/143736506/cdd4e797-1139-444f-a223-bdaf8932889e)
+
+
+## Credits
+
+-https://kenwheeler.github.io/slick/
+-https://get.foundation/index.html
+-https://developer.imdb.com/
+-https://developer.themoviedb.org/reference/intro/getting-started
