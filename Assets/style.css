@@ -384,3 +384,15 @@ footer p{
 .card-section {
     background-color: var(--red);
 }
+
+/*#movieTitle,
+#movieReleaseDate,
+#movieRating,
+#movieOverview,
+#streamingServicesList,
+.top-streaming-services {
+    color: var(--red);
+} */
+
+.movie-detail-container {
+    background: var(--red);
