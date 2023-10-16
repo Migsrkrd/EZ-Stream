@@ -103,13 +103,13 @@ font-size: 125%;
 .topTenOne{
     max-width: 25%;
     margin: 20px;
-    border: 2px solid var(--white);
+    border: 2px solid var(--red);
     border-radius: 15px;
     padding: 10px;
 }
 
 .topTenOne h4{
-    background-color: var(--white);
+    background-color: var(--red);
     font-size: 200%;
     font-weight: bolder;
     /*color: var(--red); */
@@ -128,10 +128,10 @@ font-size: 125%;
     text-align: center;
     margin-bottom: 100px;
     padding: 50px;
-    color: var(--red);
+    color: #db0000;
     font-weight: bolder;
-    border-top: 3px solid var(--white);
-    border-bottom: 3px solid var(--white);
+    border-top: 3px solid #db0000;
+    border-bottom: 3px solid #db0000;
 }
 #topTenTitle h4{
     font-size: 50px;
