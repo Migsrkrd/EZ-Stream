@@ -11,6 +11,15 @@ The goal for this collaboration was to design an application that was not only f
 
 Collaboration, teamwork, and communication were all important tools we had to utilize to bring this application to fruition. We were able to achieve our goal of developing this applicaiton by always keeping open channels of communication and a detailed gameplan of what each team members duties and tasks were. If there was a problem that one of our teammates was having trouble will the other teammates wer ready to jump in to assist with solving the problem.
 
+## Technologies user
+
+*HTML
+*CSS
+*JaveScript
+*Git
+*Server Side APIs
+
+
 ## Installation
 
 Click [here](https://migsrkrd.github.io/EZ-Stream/) to visit our application!
