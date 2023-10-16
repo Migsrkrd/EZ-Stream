@@ -54,6 +54,7 @@ header {
     background-color: var(--grey);
     border: 10px solid #831010;
     border-radius: 15px;
+    width: 500px;
 }
 
 .card-divider {
@@ -140,7 +141,8 @@ nav li a:hover {
 .topTenOne {
     max-width: 250px;
     margin: 20px;
-    border: 2px solid var(--white);
+    border: 5px solid #831010;
+    background-color: var(--red);
     border-radius: 15px;
     padding: 10px;
 }
