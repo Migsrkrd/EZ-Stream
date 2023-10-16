@@ -27,7 +27,7 @@ Collaboration, teamwork, and communication were all important tools we had to ut
   
 - As a user, I want a top ten list for movies and shows so that I can see what media is trending.
 - As a User, I want an introductory carousel to display on the homepage, so that I can be introduced to what the site has to offer.
-- Carousel [here](https://migsrkrd.github.io/EZ-Stream/)
+-![Application homepage](https://github.com/Migsrkrd/EZ-Stream/assets/143736506/cdd4e797-1139-444f-a223-bdaf8932889e)
 - As a user, I want a grid layout to be centered and columned throughout the page, so that the website is clean, clear, and well organized.
 
 - **ADD CSS FRAMEWORK GIF AND
@@ -37,17 +37,13 @@ Collaboration, teamwork, and communication were all important tools we had to ut
 - As a user, I want a clean and centered web page layout using foundation so that the process of the goal layout is clean, centered, and easy to display.
 
 
-## Installation
-
-- **ADD SITE DEMO GIF HERE
-
 ## Learning Objective
 
 This project gave our group exposure to working on a application in  group setting. We had to utilize the git work flow to keep our indivuidual work organize and utilized the push and pul methods to make sure our work was integrated with the main code. We got valuable exposure to creating an application that used API calls to display information and functionality. We also had to utilize several third party APIs, CSS framework libraries, and JS libraries in order to make our application functional and dynamic.
 
 ## Usage
 
-![Application homepage](https://github.com/Migsrkrd/EZ-Stream/assets/143736506/cdd4e797-1139-444f-a223-bdaf8932889e)
+-- - **ADD SITE DEMO GIF HERE
 
 - To find where your favorite content is being streamed just enter the show or movie you are looking to stream in the search bar and our application will tell you exactly where that content is available. You could also navigate to the top ten section to see the current top ten most popular movies or shows from IMDB if you need content recommendations.
 
