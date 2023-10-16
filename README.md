@@ -23,14 +23,47 @@ Collaboration, teamwork, and communication were all important tools we had to ut
 
 - As a user, I want a search bar that shows me all applicable streaming services for what I am trying to watch so that I am able to have multiple streaming options show up.
 
-- **ADD SEARCH BAR GIF HERE & API CALL CODE SNIPPET
+![Search Box Demo](<Assets/Ez stream search (1).gif>)
+```
+@media only screen and (max-width: 600px) {
+    header {
+        height: 10vh;
+        font-size: 80%;  
+    }
+
+    .top-bar-right img {
+        height: 40%;
+    }
+
+    #webName {
+        font-size: 200%;
+    }
+
+    .searchArea {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .btn, textarea {
+        font-size: 100%;
+    }
+
+    li a {
+        font-size: 70%;
+    }
+
+    .orbit-container {
+        height: 30vh;
+    }
+}
+```
   
 - As a user, I want a top ten list for movies and shows so that I can see what media is trending.
 - As a User, I want an introductory carousel to display on the homepage, so that I can be introduced to what the site has to offer.
 -![Application homepage](https://github.com/Migsrkrd/EZ-Stream/assets/143736506/cdd4e797-1139-444f-a223-bdaf8932889e)
 - As a user, I want a grid layout to be centered and columned throughout the page, so that the website is clean, clear, and well organized.
 
-- **ADD CSS FRAMEWORK GIF AND
+![Site adjustments](<Assets/Ez stream search (5).gif>)
 -   - https://get.foundation/index.html
 
 - As a user, I want a section below the search bar displaying my search results, so that my desired content is easily viewed.
@@ -43,7 +76,7 @@ This project gave our group exposure to working on a application in  group setti
 
 ## Usage
 
--- - **ADD SITE DEMO GIF HERE
+![Site Demo](<Assets/Ez stream search (6).gif>)
 
 - To find where your favorite content is being streamed just enter the show or movie you are looking to stream in the search bar and our application will tell you exactly where that content is available. You could also navigate to the top ten section to see the current top ten most popular movies or shows from IMDB if you need content recommendations.
 
