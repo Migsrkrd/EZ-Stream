@@ -19,6 +19,11 @@ Collaboration, teamwork, and communication were all important tools we had to ut
 ## Credits
 
 -https://kenwheeler.github.io/slick/
+
 -https://get.foundation/index.html
+
 -https://developer.imdb.com/
+
 -https://developer.themoviedb.org/reference/intro/getting-started
+
+-[jQuery](https://jquery.com/)https://jquery.com/
