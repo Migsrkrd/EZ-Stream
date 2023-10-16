@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('.carousel-container').slick({
         dots: true,
-        arrows: false,
+        arrows: true,
         infinite: true,
         speed: 500,
         fade: true,
