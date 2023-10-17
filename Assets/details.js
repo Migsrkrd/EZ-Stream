@@ -65,19 +65,4 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error("ID or type not found in the URL");
     }
 });
-
-function saveToHistory(movieOrShow, type) { 
-    console.log('Saving to history:', movieOrShow);
-    let history = JSON.parse(localStorage.getItem('userHistory') || '[]');
-    if (!history.some(item => item.id === movieOrShow.id)) {
-        const id = movieOrShow.id;
-        const title = movieOrShow.title || movieOrShow.name;
-        const poster_path = movieOrShow.poster_path;
-        const release_date = movieOrShow.release_date || movieOrShow.first_air_date;
-        const vote_average = movieOrShow.vote_average;
-        const overview = movieOrShow.overview;
-        const savedItem = { id, title, poster_path, release_date, vote_average, overview, type }; 
-        history.push(savedItem);
-        localStorage.setItem('userHistory', JSON.stringify(history));
-    }
-}
+    
